@@ -51,3 +51,22 @@ section {
     margin-bottom: 2%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+section {
+    padding: 2%;
+    background-color: #f7f7f7;
+    margin-top: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 2%;
+}
+section h2 {
+    margin-top: 0;
+    font-size: 1.8em;
+}
+section p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+nav a.active {
+    color: #ccc;
+    text-decoration: underline;
+}
