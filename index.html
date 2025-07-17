@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Operating Systems</title>
+    <link rel="stylesheet" href="os.css"> 
+</head>
+<body>
+    <div class="table-container">
+        <h2>Files and Directories, Naming Conventions, and the File Allocation Table (FAT)</h2>
+        <h3>Directory Structure</h3>
+        <h4>How does each OS organize files and folders?</h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>Uses a hierarchical file system with a root directory (e.g., C:) and supports various file systems (NTFS, FAT32, exFAT).</td>
+                <td>uses a hierarchical file system with a root directory (/) and supports various file systems (ext4, XFS, Btrfs). Linux is case-sensitive.</td>
+                <td>Uses a hierarchical file system with a root directory (/) and supports various file systems (APFS, HFS+). Mac is case-insensitive by default.</td>
+            </tr>
+        </table>
+
+        <h4>How are file paths written?</h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>Uses backslashes (\) to separate directories in a file path. Example: C:\Users\Username\Documents\file.txt</td>
+                <td>Use forward slashes (/) to separate directories in a file path. Examples:  /home/username/documents/file.txt </td>
+                <td>Use forward slashes (/) to separate directories in a file path. Examples:  /Users/username/Documents/file.txt</td>
+            </tr>
+        </table>
+
+        <h3>Naming Conventions</h3>
+        <h4>Are names case-sensitive?</h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>Generally case-insensitive, but preserves case. Example: File.txt and file.txt are treated as the same file.</td>
+                <td>Case-sensitive. Example: File.txt and file.txt are treated as different files</td>
+                <td>By default, case-insensitive (HFS+, APFS), but can be case-sensitive if formatted as such.</td>
+            </tr>
+        </table>
+
+        <h4>Are there naming restrictions?</h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>Restrictions include:
+                        <li>Reserved characters: >, <, |, ?, *, and "</li>
+                        <li>Reserved names: CON, PRN, AUX, NUL, COM1-9, LPT1-9</li>
+                        <li> File name length: Typically limited to 256 characters</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>Restrictions include:
+                        <li>Reserved characters: / (forward slash)</li>
+                        <li>File name length: Typically limited to 255 bytes (characters)</li>
+                        <li>Avoid using special characters like *, ?, <, >, |, and ; without proper escaping</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>Similar to Linux, with restrictions including:
+                        <li> Reserved characters: / (forward slash)</li>
+                        <li>File name length: Typically limited to 255 characters</li>
+                        <li> Avoid using special characters like *, ?, <, >, |, and ; without proper escaping</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+
+        <h3>File Systems</h3>
+        <h4>What file systems are used (e.g., NTFS, FAT32, ext4)?</h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>Commonly uses
+                        <li>NTFS (New Technology File System)</li>
+                        <li>FAT32 (File Allocation Table 32)</li>
+                        <li>exFAT (Extended File Allocation Table)</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>Commonly uses:</ul>
+                    <li>ext4 (Fourth Extended File System</li>
+                    <li>XFS (X File System)</li>
+                    <li> Btrfs (B-Tree File System)</li>
+                    <li>ext3, ext2, and others</li>
+                </td>
+                <td>
+                    <ul>Commonly uses:
+                        <li> APFS (Apple File System)</li>
+                        <li>HFS+ (Hierarchical File System Plus)</li>
+                    </ul>
+                </td>
+            </tr>
+         </table>
+
+         <h4>Mention FAT specifically, where is it still used?</h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Native support for FAT12, FAT16, FAT32, and exFAT.</li>
+                        <li>Default file system in older Windows versions and still used for removable drives.</li>
+                        <li>Can format drives using FAT or exFAT via built-in tools.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Read/write support for FAT32 and exFAT through kernel drivers (vfat for FAT32, exfat or exfat-fuse for exFAT).</li>
+                        <li>Often used for dual-boot sharing, USB drives, and SD cards.</li>
+                        <li>Can mount and format FAT file systems with utilities like mkfs.vfat, mount, and dosfstools</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Full read/write support for FAT32 and exFAT.</li>
+                        <li>Frequently used for external drives meant to be shared with Windows.</li>
+                        <li>Can format drives in FAT32 and exFAT via Disk Utility.</li>
+                    </ul>
+                </td>
+            </tr>
+         </table>
+
+         <h2>Executable File Extensions</h2>
+         <h3>Executable File Types</h3>
+         <h4></h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul>
+                        <li>.EXE (Executable File): The most common executable file format in Windows.</li>
+                        <li>.DLL (Dynamic Link Library): Shared library files that contain code and resources.</li>
+                        <li>.COM (Command File): Older executable file format, less common today.</li>
+                        <li>.BAT (Batch File): Script files that execute a series of commands.</li>
+                        <li>.CMD (Command Script): Similar to batch files, used for scripting.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>ELF (Executable and Linkable Format): The standard executable file format for Linux.</li>
+                        <li>.SH (Shell Script): Script files that execute a series of commands in a shell.</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>.APP (Application Bundle): A directory that contains the executable and resources for an application.</li>
+                        <li>.DMG (Disk Image): A file format used for distributing applications and installing software.</li>
+                        <li>.PKG (Installer Package): A file format used for installing software.</li>
+                        <li>Unix Executables: macOS also supports Unix-style executables, similar to Linux ELF files</li>
+                    </ul>
+                </td>
+            </tr>
+         </table>
+
+         <h2>Script Execution</h2>
+         <h4>How does each OS run command or script files?</h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>Command Prompt (cmd.exe): Runs batch files (.BAT, .CMD) and executes commands.</td>
+                <td>Shell: Various shells like Bash (default on many Linux distros), Zsh, and others</td>
+                <td>Terminal: The Terminal app provides a command-line interface to interact with the shell (Bash or Zsh).</td>
+            </tr>
+         </table>
+
+         <h4>How does each OS run command or script files?</h4>
+        <table>
+            <tr>
+                <th>Windows</th>
+                <th>Linux</th>
+                <th>Mac</th>
+            </tr>
+            <tr>
+                <td>PowerShell: A more powerful shell that runs PowerShell scripts (.PS1) and supports advanced scripting.</td>
+                <td>Linux: Terminal: The terminal emulator provides a command-line interface to interact with the shell</td>
+                <td>
+                    <ul>
+                        <li>Terminal: The Terminal app provides a command-line interface to interact with the shell (Bash or Zsh).</li>
+                        <li>Shell: macOS uses Bash or Zsh as its default shell, which can run shell scripts (.SH) and execute commands.</li>
+                    </ul>
+                </td>
+            </tr>
+         </table>
+    </div>
+    <a href="task101.html">
+<button>Go BACK TO MAIN PAGE</button>
+    </a>
+</body>
+</html>
