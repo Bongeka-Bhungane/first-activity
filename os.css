@@ -9,3 +9,18 @@ body {
     gap: 20px;
     justify-content: center;
 }
+table {
+    border-collapse: collapse;
+    width: 250px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+th {
+   background-color: #007BFF;
+   color: #f7f7f7;
+}
